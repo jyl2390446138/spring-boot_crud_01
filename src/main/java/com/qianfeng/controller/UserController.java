@@ -71,7 +71,8 @@ public class UserController {
     }
 
 
-
+    public void B(){
+    }    
 
 
 
