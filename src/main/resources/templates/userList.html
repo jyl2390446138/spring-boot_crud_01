@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>名字</th>
+            <th>性别</th>
+            <th colspan="2">操作</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr th:each="user,indexObject:${users}">
+            <td th:text="${user.userId}">1001</td>
+            <td th:text="${user.userName}">李雷</td>
+            <td th:text="${user.gender}">man</td>
+            <td>
+                <a th:href="@{/user/deleteUser/{userId}(userId=${user.userId})}">删除</a>
+                <!--<a th:href="@{/user/deleteUser(userId=${user.userId})}">删除</a>-->
+            </td>
+            <td>
+                <a href="@{/user/jumpUpdateUser/{userId}(userId=${user.userId})">更新</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
